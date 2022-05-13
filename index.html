@@ -17,104 +17,81 @@
   <script>
     async function sendShare() {
       const result = await liff.shareTargetPicker([
-        {
-          "type": "flex",
-          "altText": "Flex Message",
-          "contents": {
-            "type": "bubble",
-            "body": {
-              "type": "box",
-              "layout": "vertical",
-              "spacing": "md",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "BROWN'S ADVENTURE",
-                  "size": "xl",
-                  "gravity": "center",
-                  "weight": "bold",
-                  "wrap": true
-                },
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "spacing": "sm",
-                  "margin": "lg",
-                  "contents": [
-                    {
-                      "type": "box",
-                      "layout": "baseline",
-                      "spacing": "sm",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "Date",
-                          "flex": 1,
-                          "size": "sm",
-                          "color": "#AAAAAA"
-                        },
-                        {
-                          "type": "text",
-                          "text": "Monday 25, 9:00PM",
-                          "flex": 4,
-                          "size": "sm",
-                          "color": "#666666",
-                          "wrap": true
-                        }
-                      ]
-                    },
-                    {
-                      "type": "box",
-                      "layout": "baseline",
-                      "spacing": "sm",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "Place",
-                          "flex": 1,
-                          "size": "sm",
-                          "color": "#AAAAAA"
-                        },
-                        {
-                          "type": "text",
-                          "text": "LINE Thailand",
-                          "flex": 4,
-                          "size": "sm",
-                          "color": "#666666",
-                          "wrap": true
-                        }
-                      ]
-                    },
-                    {
-                      "type": "box",
-                      "layout": "vertical",
-                      "margin": "xxl",
-                      "contents": [
-                        {
-                          "type": "spacer"
-                        },
-                        {
-                          "type": "image",
-                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
-                          "size": "xl",
-                          "aspectMode": "cover"
-                        },
-                        {
-                          "type": "text",
-                          "text": "You can enter the theater by using this code instead of a ticket",
-                          "margin": "xxl",
-                          "size": "xs",
-                          "color": "#AAAAAA",
-                          "wrap": true
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
+		 {
+		  "type": "bubble",
+		  "hero": {
+			"type": "image",
+			"url": "https://img.onl/XgKgRU",
+			"size": "full",
+			"aspectRatio": "20:13",
+			"aspectMode": "cover",
+			"action": {
+			  "type": "uri",
+			  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%8B%89%E5%AF%B6%E6%88%91%E6%84%9B%E4%BD%A0"
+			}
+		  },
+		  "body": {
+			"type": "box",
+			"layout": "vertical",
+			"contents": [
+			  {
+				"type": "text",
+				"text": "LINE Pay",
+				"weight": "bold",
+				"size": "md"
+			  },
+			  {
+				"type": "box",
+				"layout": "vertical",
+				"margin": "lg",
+				"spacing": "sm",
+				"contents": [
+				  {
+					"type": "box",
+					"layout": "baseline",
+					"spacing": "sm",
+					"contents": [
+					  {
+						"type": "text",
+						"text": "您已收到 NT$ 1,000。 (來自 : Lala)",
+						"wrap": true,
+						"color": "#666666",
+						"size": "sm",
+						"flex": 5
+					  }
+					]
+				  }
+				]
+			  }
+			]
+		  },
+		  "footer": {
+			"type": "box",
+			"layout": "vertical",
+			"spacing": "sm",
+			"contents": [
+			  {
+				"type": "button",
+				"style": "primary",
+				"height": "sm",
+				"action": {
+				  "type": "uri",
+				  "label": "瞭解更多",
+				  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%8B%89%E5%AF%B6%E6%88%91%E6%84%9B%E4%BD%A0"
+				},
+				"margin": "none"
+			  },
+			  {
+				"type": "box",
+				"layout": "vertical",
+				"contents": [],
+				"margin": "sm"
+			  }
+			],
+			"flex": 0,
+			"margin": "md"
+		  }
+		}
       ])
       if (result) {
         alert(`[${result.status}] Message sent!`)
@@ -136,7 +113,7 @@
       window.location.reload()
     }
     async function main() {
-      await liff.init({ liffId: "1657128016-pdKjeYoB" })
+      await liff.init({ liffId: "1656997750-QLPwGlaN" })
       if (liff.isLoggedIn()) {
         document.getElementById("btnShare").style.display = "block"
         if (!liff.isInClient()) {
