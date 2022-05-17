@@ -19,103 +19,92 @@
       const result = await liff.shareTargetPicker([
         {
           "type": "flex",
-          "altText": "Lala送禮物來囉!",
+          "altText": "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
           "contents": {
 			  "type": "bubble",
-			  "size": "mega",
+			  "size": "kilo",
 			  "hero": {
 				"type": "image",
-				"url": "https://img.onl/olwxWE",
+				"url": "https://img.onl/qCFiCL",
 				"size": "full",
-				"aspectRatio": "18:19",
+				"aspectRatio": "20:13",
+				"aspectMode": "cover",
 				"action": {
-				  "type": "message",
-				  "label": "action",
-				  "text": "我喜歡你很久了 可以跟我交往嗎?"
-				},
-				"offsetTop": "none",
-				"offsetBottom": "none",
-				"offsetStart": "none",
-				"margin": "none",
-				"align": "center",
-				"aspectMode": "cover"
+				  "type": "uri",
+				  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%93%8D%E4%BD%A0%E5%AA%BD%E9%9B%B7%E5%8C%85%E5%BF%AB%E9%BB%9E%E5%81%9A%E4%BA%8B%E5%95%A6"
+				}
 			  },
 			  "body": {
-				"type": "box",
-				"layout": "horizontal",
-				"spacing": "none",
-				"action": {
-				  "type": "message",
-				  "label": "action",
-				  "text": "我喜歡你 跟我交往好不好 ><"
-				},
-				"contents": [
-				  {
-					"type": "image",
-					"url": "https://img.onl/pNQsvU",
-					"align": "start",
-					"size": "md",
-					"offsetTop": "none",
-					"offsetBottom": "none",
-					"action": {
-					  "type": "message",
-					  "label": "action",
-					  "text": "我喜歡你 跟我交往好不好 ><"
-					},
-					"offsetStart": "none",
-					"position": "relative",
-					"offsetEnd": "none"
-				  },
-				  {
-					"type": "text",
-					"text": "【星巴克】大杯芝麻杏仁豆腐星冰樂即享券",
-					"size": "md",
-					"weight": "bold",
-					"margin": "none",
-					"align": "start",
-					"offsetTop": "xxl",
-					"contents": [],
-					"style": "normal",
-					"offsetEnd": "none",
-					"wrap": true,
-					"offsetBottom": "none",
-					"offsetStart": "none",
-					"action": {
-					  "type": "message",
-					  "label": "action",
-					  "text": "我喜歡你 跟我交往好不好><"
-					},
-					"position": "relative"
-				  }
-				],
-				"margin": "none",
-				"offsetTop": "none",
-				"position": "relative",
-				"offsetStart": "none",
-				"offsetEnd": "none",
-				"offsetBottom": "none"
-			  },
-			  "footer": {
 				"type": "box",
 				"layout": "vertical",
 				"contents": [
 				  {
-					"type": "button",
-					"color": "#EEE9E9",
-					"margin": "none",
-					"action": {
-					  "type": "message",
-					  "label": "打開我的禮物",
-					  "text": "我好喜歡你 可以跟我交往嗎><"
-					},
-					"style": "secondary"
+					"type": "text",
+					"text": "爬梯子",
+					"weight": "bold",
+					"size": "md"
+				  },
+				  {
+					"type": "box",
+					"layout": "vertical",
+					"margin": "lg",
+					"spacing": "sm",
+					"contents": [
+					  {
+						"type": "box",
+						"layout": "baseline",
+						"spacing": "sm",
+						"contents": [
+						  {
+							"type": "text",
+							"text": "我建立了一個爬梯子遊戲，馬上來看看結果吧！",
+							"wrap": true,
+							"color": "#666666",
+							"size": "sm",
+							"flex": 5,
+							"offsetEnd": "none",
+							"offsetStart": "none",
+							"offsetBottom": "none",
+							"offsetTop": "sm"
+						  }
+						]
+					  }
+					]
+				  }
+				],
+				"action": {
+				  "type": "uri",
+				  "label": "action",
+				  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%93%8D%E4%BD%A0%E5%AA%BD%E9%9B%B7%E5%8C%85%E5%BF%AB%E9%BB%9E%E5%81%9A%E4%BA%8B%E5%95%A6"
+				}
+			  },
+			  "footer": {
+				"type": "box",
+				"layout": "vertical",
+				"spacing": "sm",
+				"contents": [
+				  {
+					"type": "separator",
+					"margin": "none"
 				  },
 				  {
 					"type": "button",
+					"style": "link",
+					"height": "sm",
 					"action": {
-					  "type": "message",
-					  "label": "傳送感謝小卡",
-					  "text": "我喜歡你 跟我交往好不好 ><"
+					  "type": "uri",
+					  "label": "開啟爬梯子遊戲",
+					  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%93%8D%E4%BD%A0%E5%AA%BD%E9%9B%B7%E5%8C%85%E5%BF%AB%E9%BB%9E%E5%81%9A%E4%BA%8B%E5%95%A6"
+					}
+				  },
+				  {
+					"type": "button",
+					"style": "link",
+					"height": "sm",
+					"action": {
+					  "type": "uri",
+					  "label": "查看全部結果",
+					  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%93%8D%E4%BD%A0%E5%AA%BD%E9%9B%B7%E5%8C%85%E5%BF%AB%E9%BB%9E%E5%81%9A%E4%BA%8B%E5%95%A6"
 					}
 				  },
 				  {
@@ -124,25 +113,11 @@
 				  {
 					"type": "box",
 					"layout": "vertical",
-					"contents": [
-					  {
-						"type": "button",
-						"action": {
-						  "type": "message",
-						  "label": "LINE 禮物",
-						  "text": "跟我結婚好不好><"
-						},
-						"position": "relative",
-						"margin": "none",
-						"height": "sm",
-						"style": "link",
-						"offsetTop": "none",
-						"offsetStart": "none",
-						"offsetEnd": "none"
-					  }
-					]
+					"contents": [],
+					"margin": "sm"
 				  }
-				]
+				],
+				"flex": 0
 			  }
 			}
         }
