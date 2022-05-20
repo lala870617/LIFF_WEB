@@ -15,6 +15,10 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
+    var context = liff.getProfile();
+    var user_name = user.displayName;
+    console.log(user_name);
+	  
     async function sendShare() {
       const result = await liff.shareTargetPicker([
         {
