@@ -15,15 +15,14 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>	  
-    async function sendShare() {
-      liff.getProfile().then((profile) => {
-      const name = profile.displayName;
-    }).catch((err) => {
-      console.log("error", err);
-    });
-	    
+    async function sendShare() {	    
       const result = await liff.shareTargetPicker([
         {
+	  liff.getProfile().then((profile) => {
+          const name = profile.displayName;
+        }).catch((err) => {
+          console.log("error", err);
+        });
           "type": "flex",
           "altText": console.log(name) + "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
           "contents": {
