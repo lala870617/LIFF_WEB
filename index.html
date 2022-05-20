@@ -14,24 +14,14 @@
   <button id="btnLogin" onclick="liff.login()">Log In</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-  <script>
-	liff.init({ liffId: '1656997750-QLPwGlaN' })
-	  .then(async () => {
-	    if (liff.isLoggedIn()) {
-	     liff.getProfile().then((profile) => {
-			const name = profile.displayName;
-		  }).catch((err) => {
-			console.log("error", err);
-		  });
-	    } else {
-	      liff.login();
-	    }
-	  })
-	  .catch((err) => {
-	    console.log(err);
-	  })
-	  
+  <script>	  
     async function sendShare() {
+      liff.getProfile().then((profile) => {
+      const name = profile.displayName;
+    }).catch((err) => {
+      console.log("error", err);
+    });
+	    
       const result = await liff.shareTargetPicker([
         {
           "type": "flex",
