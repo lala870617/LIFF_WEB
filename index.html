@@ -15,11 +15,21 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-    liff.getProfile().then((profile) => {
-    const name = profile.displayName;
-  }).catch((err) => {
-    console.log("error", err);
-  });
+	liff.init({ liffId: '1656997750-QLPwGlaN' })
+	  .then(async () => {
+	    if (liff.isLoggedIn()) {
+	     liff.getProfile().then((profile) => {
+			const name = profile.displayName;
+		  }).catch((err) => {
+			console.log("error", err);
+		  });
+	    } else {
+	      liff.login();
+	    }
+	  })
+	  .catch((err) => {
+	    console.log(err);
+	  })
 	  
     async function sendShare() {
       const result = await liff.shareTargetPicker([
