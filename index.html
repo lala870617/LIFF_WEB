@@ -19,6 +19,7 @@
     liff.getProfile().then((profile) => {
         name = profile.displayName;
       }).catch((err) => {
+	name = "err";
         console.log("error", err);
       });
       num = 15;  
