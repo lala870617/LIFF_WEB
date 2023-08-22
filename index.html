@@ -15,11 +15,9 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <script>
-    name = "None"; 
     liff.getProfile().then((profile) => {
-        name = profile.displayName;
+        const name = profile.displayName;
       }).catch((err) => {
-	name = "er1211r";
         console.log("error", err);
       });
       num = 15;  
