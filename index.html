@@ -27,10 +27,12 @@
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 	<script>
 		async function sendShare() {
-			name = "None"
+			name = "None1"
 			liff.getProfile().then((profile) => {
+				alert('getProfile works')
 				name = profile.displayName;
 			}).catch((err) => {
+				alert('getProfile fails')
 				name = err
 			});
 			const result = await liff.shareTargetPicker([
