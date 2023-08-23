@@ -29,7 +29,7 @@
 		async function sendShare() {
 			name = "None1"
 			liff.getProfile().then((profile) => {
-				alert('getProfile works')
+				alert('getProfile works [${profile.displayName}]')
 				name = profile.displayName;
 			}).catch((err) => {
 				alert('getProfile fails')
@@ -137,7 +137,7 @@
 				}
 			])
 			if (result) {
-				alert(`[${result.status}] Message sent!`)
+				// alert(`[${result.status}] Message sent!`)
 			} else {
 				const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
 
