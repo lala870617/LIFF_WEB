@@ -30,11 +30,10 @@
 			name = "None3"
 			liff.getProfile().then((profile) => {
 				name = profile.displayName;
-				alert('getProfile works' + name)
 			}).catch((err) => {
-				alert('getProfile fails')
 				name = err
 			});
+			alert('Current name:' + name)
 			const result = await liff.shareTargetPicker([
 				{
 					"type": "flex",
