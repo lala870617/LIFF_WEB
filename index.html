@@ -27,10 +27,10 @@
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 	<script>
 		async function sendShare() {
-			name = "None2"
+			name = "None3"
 			liff.getProfile().then((profile) => {
 				name = profile.displayName;
-				alert('getProfile works [${name}]')
+				alert('getProfile works' + name)
 			}).catch((err) => {
 				alert('getProfile fails')
 				name = err
