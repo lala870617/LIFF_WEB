@@ -28,10 +28,10 @@
 	<script>
 		async function sendShare() {
 			name = "None3"
-			liff.getProfile().then((profile) => {
-				name = profile.displayName;
+			name = await liff.getProfile().then((profile) => {
+				return profile.displayName;
 			}).catch((err) => {
-				name = err
+				return err;
 			});
 			alert('Current name:' + name)
 			const result = await liff.shareTargetPicker([
