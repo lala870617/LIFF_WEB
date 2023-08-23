@@ -27,13 +27,12 @@
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 	<script>
 		async function sendShare() {
-			name = "None3"
 			name = await liff.getProfile().then((profile) => {
 				return profile.displayName;
 			}).catch((err) => {
 				return err;
 			});
-			alert('Current name:' + name)
+
 			const result = await liff.shareTargetPicker([
 				{
 					"type": "flex",
@@ -136,7 +135,7 @@
 				}
 			])
 			if (result) {
-				// alert(`[${result.status}] Message sent!`)
+				alert(`[${result.status}] Message sent!`)
 			} else {
 				const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
 
