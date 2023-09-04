@@ -17,7 +17,7 @@
 
 <body>
 	<button id="btnShare" onclick="sendShare_Gift()">送禮物整人訊息</button>
-	<button id="btnShare" onclick="sendShare_Ladder()">爬梯子整人訊息</button>
+	<button id="btnShare2" onclick="sendShare_Ladder()">爬梯子整人訊息</button>
 	<button id="btnLogin" onclick="liff.login()">Log In</button>
 	<button id="btnLogOut" onclick="logOut()">Log Out</button>
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -297,6 +297,7 @@
 			await liff.init({ liffId: "1657128016-pdKjeYoB" })
 			if (liff.isLoggedIn()) {
 				document.getElementById("btnShare").style.display = "block"
+				document.getElementById("btnShare2").style.display = "block"
 				if (!liff.isInClient()) {
 					document.getElementById("btnLogOut").style.display = "block"
 				}
