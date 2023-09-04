@@ -1,32 +1,171 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
 	<title>My LIFF App</title>
 	<style>
-		body {
-			padding: 256px
-		}
+		body {padding: 256px}
 
-		button {
-			display: none;
+		button {display: none;
 			width: 50%;
 			padding: 16px 0;
-			margin: 16px auto
-		}
+			margin: 16px auto}
 	</style>
 </head>
 
 <body>
-	<button id="btnShare" onclick="sendShare()">Share Target Picker</button>
+	<button id="btnShare" onclick="sendShare_Gift()">送禮物整人訊息</button>
+	<button id="btnShare" onclick="sendShare_Ladder()">爬梯子整人訊息</button>
 	<button id="btnLogin" onclick="liff.login()">Log In</button>
 	<button id="btnLogOut" onclick="logOut()">Log Out</button>
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 	<script>
-		async function sendShare() {
+		async function sendShare_Gift() {
+			name = await liff.getProfile().then((profile) => {
+				return profile.displayName;
+			}).catch((err) => {
+				return err;
+			});
+
+			const result = await liff.shareTargetPicker([
+				{
+				  "type": "flex",
+				  "altText": name +"送禮物來囉!",
+				  "contents": {
+					  "type": "bubble",
+					  "size": "kilo",
+					  "hero": {
+						"type": "image",
+						"url": "https://img.onl/olwxWE",
+						"size": "full",
+						"aspectRatio": "18:19",
+						"action": {
+						  "type": "uri",
+						  "label": "action",
+						  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+						},
+						"offsetTop": "none",
+						"offsetBottom": "none",
+						"offsetStart": "none",
+						"margin": "none",
+						"align": "center",
+						"aspectMode": "cover"
+					  },
+					  "body": {
+						"type": "box",
+						"layout": "horizontal",
+						"spacing": "none",
+						"action": {
+						  "type": "uri",
+						  "label": "action",
+						  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+						},
+						"contents": [
+						  {
+							"type": "image",
+							"url": "https://img.onl/pNQsvU",
+							"align": "start",
+							"size": "md",
+							"offsetTop": "none",
+							"offsetBottom": "none",
+							"action": {
+							  "type": "uri",
+							  "label": "action",
+							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+							},
+							"offsetStart": "none",
+							"position": "relative",
+							"offsetEnd": "none"
+						  },
+						  {
+							"type": "text",
+							"text": "【星巴克】大杯芝麻杏仁豆腐星冰樂即享券",
+							"size": "md",
+							"weight": "bold",
+							"margin": "none",
+							"align": "start",
+							"offsetTop": "xxl",
+							"contents": [],
+							"style": "normal",
+							"offsetEnd": "none",
+							"wrap": true,
+							"offsetBottom": "none",
+							"offsetStart": "none",
+							"action": {
+							  "type": "uri",
+							  "label": "action",
+							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+							},
+							"position": "relative"
+						  }
+						],
+						"margin": "none",
+						"offsetTop": "none",
+						"position": "relative",
+						"offsetStart": "none",
+						"offsetEnd": "none",
+						"offsetBottom": "none"
+					  },
+					  "footer": {
+						"type": "box",
+						"layout": "vertical",
+						"contents": [
+						  {
+							"type": "button",
+							"color": "#EEE9E9",
+							"margin": "none",
+							"action": {
+							  "type": "uri",
+							  "label": "打開我的禮物",
+							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+							},
+							"style": "secondary"
+						  },
+						  {
+							"type": "button",
+							"action": {
+							  "type": "uri",
+							  "label": "傳送感謝小卡",
+							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+							}
+						  },
+						  {
+							"type": "separator"
+						  },
+						  {
+							"type": "box",
+							"layout": "vertical",
+							"contents": [
+							  {
+								"type": "button",
+								"action": {
+								  "type": "uri",
+								  "label": "LINE禮物",
+								  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+								},
+								"position": "relative",
+								"margin": "none",
+								"height": "sm",
+								"style": "link",
+								"offsetTop": "none",
+								"offsetStart": "none",
+								"offsetEnd": "none"
+							  }
+							],
+							"action": {
+							  "type": "uri",
+							  "label": "action",
+							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E5%96%9C%E6%AD%A1%E4%BD%A0%20%E8%B7%9F%E6%88%91%E4%BA%A4%E5%BE%80%E5%A5%BD%E3%84%87%20%3E%3C"
+							}
+						  }
+						]
+					  }
+					}  
+				}
+			])
+			async function sendShare_Ladder() {
 			name = await liff.getProfile().then((profile) => {
 				return profile.displayName;
 			}).catch((err) => {
@@ -134,6 +273,7 @@
 					}
 				}
 			])
+			
 			if (result) {
 				alert(`[${result.status}] Message sent!`)
 			} else {
@@ -154,7 +294,7 @@
 			window.location.reload()
 		}
 		async function main() {
-			await liff.init({ liffId: "1656997750-QLPwGlaN" })
+			await liff.init({ liffId: "1657128016-pdKjeYoB" })
 			if (liff.isLoggedIn()) {
 				document.getElementById("btnShare").style.display = "block"
 				if (!liff.isInClient()) {
