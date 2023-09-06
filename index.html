@@ -186,13 +186,18 @@
 				}
 			}
 		}
-		}
 
 		async function sendShare_Ladder() {
+			name = await liff.getProfile().then((profile) => {
+				return profile.displayName;
+			}).catch((err) => {
+				return err;
+			});
+
 			const result = await liff.shareTargetPicker([
 				{
 					"type": "flex",
-					"altText": "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
+					"altText": name + "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
 					"contents": {
 						"type": "bubble",
 						"size": "kilo",
@@ -304,7 +309,6 @@
 					alert('ShareTargetPicker was canceled in LINE app')
 				}
 			}
-		}
 		}
 
 		function logOut() {
