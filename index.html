@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-	<title>My LIFF App2</title>
+	<title>My LIFF App3</title>
 	<style>
 		body {
 			padding: 256px
@@ -171,19 +171,28 @@
 					}
 				}
 			])
+			if (result) {
+				alert(`[${result.status}] Message sent!`)
+			} else {
+				const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
+
+				if (minorVer === undefined) {
+					alert('ShareTargetPicker was canceled in external browser')
+					return
+				}
+
+				if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+					alert('ShareTargetPicker was canceled in LINE app')
+				}
+			}
+		}
 		}
 
 		async function sendShare_Ladder() {
-			name = await liff.getProfile().then((profile) => {
-				return profile.displayName;
-			}).catch((err) => {
-				return err;
-			});
-
 			const result = await liff.shareTargetPicker([
 				{
 					"type": "flex",
-					"altText": name + "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
+					"altText": "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
 					"contents": {
 						"type": "bubble",
 						"size": "kilo",
@@ -281,6 +290,21 @@
 					}
 				}
 			])
+			if (result) {
+				alert(`[${result.status}] Message sent!`)
+			} else {
+				const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
+
+				if (minorVer === undefined) {
+					alert('ShareTargetPicker was canceled in external browser')
+					return
+				}
+
+				if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+					alert('ShareTargetPicker was canceled in LINE app')
+				}
+			}
+		}
 		}
 
 		function logOut() {
