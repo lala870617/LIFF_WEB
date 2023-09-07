@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-	<title>My LIFF App3</title>
+	<title>My LIFF App2</title>
 	<style>
 
 		button {
@@ -21,6 +21,7 @@
 <body>
 	<button id="btnShare" onclick="sendShare_Gift()" style="display: block;margin: 20px auto;padding: 20px;">Gift</button>
 	<button id="btnShare2" onclick="sendShare_Ladder()" style="display: block;margin: 20px auto;padding: 20px;">Ladder</button>
+	<button id="btnShare3" onclick="sendShare_Pay()" style="display: block;margin: 20px auto;padding: 20px;">Pay</button>
 	<button id="btnLogin" onclick="liff.login()" style="display: block;margin: 20px auto;padding: 20px;">Log In</button>
 	<button id="btnLogOut" onclick="logOut()">Log Out</button>
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -194,7 +195,7 @@
 			const result = await liff.shareTargetPicker([
 				{
 					"type": "flex",
-					"altText": name + "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
+					"altText": "爬梯子遊戲已建立，讓梯子決定您的命運吧！",
 					"contents": {
 						"type": "bubble",
 						"size": "kilo",
@@ -307,7 +308,136 @@
 				}
 			}
 		}
+		
+		async function sendShare_Pay() {
+			name = await liff.getProfile().then((profile) => {
+				return profile.displayName;
+			}).catch((err) => {
+				return err;
+			});
 
+			const result = await liff.shareTargetPicker([
+				{
+				  "type": "bubble",
+				  "size": "hecto",
+				  "hero": {
+					"type": "image",
+					"url": "https://i.imgur.com/j5VkCxE.png",
+					"size": "full",
+					"aspectRatio": "20:13",
+					"aspectMode": "cover",
+					"action": {
+					  "type": "uri",
+					  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
+					},
+					"position": "relative"
+				  },
+				  "body": {
+					"type": "box",
+					"layout": "vertical",
+					"contents": [
+					  {
+						"type": "text",
+						"text": "LINE Pay",
+						"weight": "bold",
+						"size": "xs",
+						"action": {
+						  "type": "uri",
+						  "label": "action",
+						  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
+						}
+					  },
+					  {
+						"type": "text",
+						"text": "您已收到 NT$ 520。（來自："+ name +"）",
+						"size": "xs",
+						"contents": [],
+						"color": "#8E8E8E",
+						"action": {
+						  "type": "uri",
+						  "label": "action",
+						  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
+						}
+					  },
+					  {
+						"type": "button",
+						"position": "relative",
+						"style": "secondary",
+						"height": "sm",
+						"margin": "lg",
+						"color": "#F0F0F0",
+						"action": {
+						  "type": "uri",
+						  "label": "瞭解更多",
+						  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
+						},
+						"scaling": true,
+						"offsetEnd": "none"
+					  }
+					],
+					"action": {
+					  "type": "uri",
+					  "label": "action",
+					  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
+					}
+				  },
+				  "footer": {
+					"type": "box",
+					"layout": "baseline",
+					"contents": [
+					  {
+						"type": "icon",
+						"url": "https://i.imgur.com/LriSrg0.png",
+						"margin": "none",
+						"size": "xs",
+						"scaling": true,
+						"offsetTop": "xs"
+					  },
+					  {
+						"type": "text",
+						"text": "LINE Pay",
+						"margin": "sm",
+						"size": "xxs",
+						"color": "#8E8E8E"
+					  },
+					  {
+						"type": "icon",
+						"url": "https://i.imgur.com/aKbXQ9D.png",
+						"margin": "sm",
+						"size": "xxs",
+						"offsetTop": "xs"
+					  }
+					],
+					"action": {
+					  "type": "uri",
+					  "label": "action",
+					  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
+					},
+					"position": "relative"
+				  },
+				  "styles": {
+					"footer": {
+					  "separator": true
+					}
+				  }
+				}
+			])
+			if (result) {
+				alert(`[${result.status}] Message sent!`)
+			} else {
+				const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
+
+				if (minorVer === undefined) {
+					alert('ShareTargetPicker was canceled in external browser')
+					return
+				}
+
+				if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+					alert('ShareTargetPicker was canceled in LINE app')
+				}
+			}
+		}
+		
 		function logOut() {
 			liff.logout()
 			window.location.reload()
@@ -318,6 +448,7 @@
 			if (liff.isLoggedIn()) {
 				document.getElementById("btnShare").style.display = "block"
 				document.getElementById("btnShare2").style.display = "block"
+				document.getElementById("btnShare3").style.display = "block"
 				if (!liff.isInClient()) {
 					document.getElementById("btnLogOut").style.display = "block"
 				}
