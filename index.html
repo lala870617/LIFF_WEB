@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-	<title>My LIFF App2</title>
+	<title>My LIFF App3</title>
 	<style>
 
 		button {
@@ -315,7 +315,7 @@
 			}).catch((err) => {
 				return err;
 			});
-
+			alert(`[${result.status}] 2Message sent!`)
 			const result = await liff.shareTargetPicker([
 				{
 				  "type": "bubble",
@@ -422,7 +422,7 @@
 				  }
 				}
 			])
-			alert(`[${result.status}] Message sent!`)
+			
 			if (result) {
 				alert(`[${result.status}] Message sent!`)
 			} else {
