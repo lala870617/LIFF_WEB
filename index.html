@@ -455,18 +455,18 @@
 					"altText": "您收到一則紅包訊息！",
 					"contents":{
 						  "type": "bubble",
-						  "size": "hecto",
+						  "size": "kilo",
 						  "hero": {
 							"type": "image",
-							"url": "https://i.imgur.com/j5VkCxE.png",
+							"url": "https://i.imgur.com/2Fbb9wM.png",
 							"size": "full",
 							"aspectRatio": "20:13",
 							"aspectMode": "cover",
 							"action": {
-							  "type": "uri",
-							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
-							},
-							"position": "relative"
+							  "type": "message",
+							  "label": "action",
+							  "text": "按的龍喜北七"
+							}
 						  },
 						  "body": {
 							"type": "box",
@@ -474,89 +474,91 @@
 							"contents": [
 							  {
 								"type": "text",
-								"text": "LINE Pay",
+								"text": "LINE Pay 紅包",
 								"weight": "bold",
-								"size": "xs",
+								"size": "sm",
+								"color": "#000000",
 								"action": {
-								  "type": "uri",
+								  "type": "message",
 								  "label": "action",
-								  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
+								  "text": "你各位龍喜北七"
 								}
 							  },
 							  {
 								"type": "text",
-								"text": "您已收到 NT$ 888。（來自："+ name +"）",
+								"text": "Lala發紅包了，限時3天！快來試試手氣！(紅包將在3天後過期並退還給好友。)",
 								"size": "xs",
-								"contents": [],
-								"color": "#8E8E8E",
+								"wrap": true,
+								"offsetTop": "md",
 								"action": {
-								  "type": "uri",
+								  "type": "message",
 								  "label": "action",
-								  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=image&downloadUrl=https://i.imgur.com/ait6uEi.jpg&previewUrl=https://i.imgur.com/ait6uEi.jpg"
+								  "text": "你各位龍喜北七"
 								}
-							  },
-							  {
-								"type": "button",
-								"position": "relative",
-								"style": "secondary",
-								"height": "sm",
-								"margin": "lg",
-								"color": "#F0F0F0",
-								"action": {
-								  "type": "uri",
-								  "label": "瞭解更多",
-								  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E5%80%92%E6%AD%A4%E4%B8%80%E6%B2%B9"
-								},
-								"scaling": true,
-								"offsetEnd": "none"
 							  }
-							],
-							"action": {
-							  "type": "uri",
-							  "label": "action",
-							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
-							}
+							]
 						  },
 						  "footer": {
 							"type": "box",
-							"layout": "baseline",
+							"layout": "vertical",
+							"spacing": "sm",
 							"contents": [
 							  {
-								"type": "icon",
-								"url": "https://i.imgur.com/LriSrg0.png",
-								"margin": "none",
-								"size": "xs",
-								"scaling": true,
-								"offsetTop": "xs"
+								"type": "separator"
 							  },
 							  {
-								"type": "text",
-								"text": "LINE Pay",
-								"margin": "sm",
-								"size": "xxs",
-								"color": "#8E8E8E"
+								"type": "button",
+								"style": "link",
+								"action": {
+								  "type": "message",
+								  "label": "查看紅包狀態",
+								  "text": "按的龍喜北七"
+								},
+								"margin": "none"
 							  },
 							  {
-								"type": "icon",
-								"url": "https://i.imgur.com/aKbXQ9D.png",
-								"margin": "sm",
-								"size": "xxs",
-								"offsetTop": "xs"
+								"type": "box",
+								"layout": "vertical",
+								"contents": [
+								  {
+									"type": "separator",
+									"margin": "xs"
+								  },
+								  {
+									"type": "box",
+									"layout": "baseline",
+									"contents": [
+									  {
+										"type": "icon",
+										"url": "https://i.imgur.com/QdZ0eDc.png",
+										"margin": "none",
+										"scaling": true,
+										"offsetTop": "sm"
+									  },
+									  {
+										"type": "text",
+										"text": "紅包",
+										"color": "#8E8E8E",
+										"margin": "sm",
+										"size": "xs",
+										"offsetTop": "xs"
+									  },
+									  {
+										"type": "icon",
+										"url": "https://i.imgur.com/aKbXQ9D.png",
+										"margin": "xs",
+										"size": "xs",
+										"offsetTop": "sm"
+									  }
+									]
+								  }
+								],
+								"margin": "sm"
 							  }
 							],
-							"action": {
-							  "type": "uri",
-							  "label": "action",
-							  "uri": "https://liff.line.me/1657022499-njBkN1k3?auto=yes&type=text&text=%E6%88%91%E8%B6%85%E7%AC%A8%20%E6%B4%BB%E8%A9%B2%E8%A2%AB%E9%A8%99"
-							},
-							"position": "relative"
-						  },
-						  "styles": {
-							"footer": {
-							  "separator": true
-							}
-						  }
+							"flex": 0
 						}
+					}
 
 				}
 			])
