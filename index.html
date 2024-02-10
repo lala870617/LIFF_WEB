@@ -450,113 +450,113 @@
 			const result = await liff.shareTargetPicker([
 				{
 					"type": "flex",
-					"altText": "您收到了紅包訊息!",
+					"altText": "已收到NT$ 666的轉帳。",
 					"contents": {
-						  "type": "bubble",
-						  "size": "kilo",
-						  "hero": {
-							"type": "image",
-							"url": "https://i.imgur.com/2Fbb9wM.png",
-							"size": "full",
-							"aspectRatio": "20:13",
-							"aspectMode": "cover",
+					  "type": "bubble",
+					  "size": "kilo",
+					  "hero": {
+						"type": "image",
+						"url": "https://i.imgur.com/2Fbb9wM.png",
+						"size": "full",
+						"aspectRatio": "20:13",
+						"aspectMode": "cover",
+						"action": {
+						  "type": "message",
+						  "label": "action",
+						  "text": "按的龍喜北七"
+						}
+					  },
+					  "body": {
+						"type": "box",
+						"layout": "vertical",
+						"contents": [
+						  {
+							"type": "text",
+							"text": "LINE Pay 紅包",
+							"weight": "bold",
+							"size": "sm",
+							"color": "#000000",
 							"action": {
 							  "type": "message",
 							  "label": "action",
-							  "text": "按的龍喜北七"
+							  "text": "你各位龍喜北七"
 							}
 						  },
-						  "body": {
-							"type": "box",
-							"layout": "vertical",
-							"contents": [
-							  {
-								"type": "text",
-								"text": "LINE Pay 紅包",
-								"weight": "bold",
-								"size": "sm",
-								"color": "#000000",
-								"action": {
-								  "type": "message",
-								  "label": "action",
-								  "text": "你各位龍喜北七"
-								}
-							  },
-							  {
-								"type": "text",
-								"text": "Lala發紅包了，限時3天！快來試試手氣！(紅包將在3天後過期並退還給好友。)",
-								"size": "xs",
-								"wrap": true,
-								"offsetTop": "md",
-								"action": {
-								  "type": "message",
-								  "label": "action",
-								  "text": "你各位龍喜北七"
-								}
-							  }
-							]
+						  {
+							"type": "text",
+							"text": "Lala發紅包了，限時3天！快來試試手氣！(紅包將在3天後過期並退還給好友。)",
+							"size": "xs",
+							"wrap": true,
+							"offsetTop": "md",
+							"action": {
+							  "type": "message",
+							  "label": "action",
+							  "text": "你各位龍喜北七"
+							}
+						  }
+						]
+					  },
+					  "footer": {
+						"type": "box",
+						"layout": "vertical",
+						"spacing": "sm",
+						"contents": [
+						  {
+							"type": "separator"
 						  },
-						  "footer": {
+						  {
+							"type": "button",
+							"style": "link",
+							"action": {
+							  "type": "message",
+							  "label": "查看紅包狀態",
+							  "text": "按的龍喜北七"
+							},
+							"margin": "none"
+						  },
+						  {
 							"type": "box",
 							"layout": "vertical",
-							"spacing": "sm",
 							"contents": [
 							  {
-								"type": "separator"
-							  },
-							  {
-								"type": "button",
-								"style": "link",
-								"action": {
-								  "type": "message",
-								  "label": "查看紅包狀態",
-								  "text": "按的龍喜北七"
-								},
-								"margin": "none"
+								"type": "separator",
+								"margin": "xs"
 							  },
 							  {
 								"type": "box",
-								"layout": "vertical",
+								"layout": "baseline",
 								"contents": [
 								  {
-									"type": "separator",
-									"margin": "xs"
+									"type": "icon",
+									"url": "https://i.imgur.com/QdZ0eDc.png",
+									"margin": "none",
+									"scaling": true,
+									"offsetTop": "sm"
 								  },
 								  {
-									"type": "box",
-									"layout": "baseline",
-									"contents": [
-									  {
-										"type": "icon",
-										"url": "https://i.imgur.com/QdZ0eDc.png",
-										"margin": "none",
-										"scaling": true,
-										"offsetTop": "sm"
-									  },
-									  {
-										"type": "text",
-										"text": "紅包",
-										"color": "#8E8E8E",
-										"margin": "sm",
-										"size": "xs",
-										"offsetTop": "xs"
-									  },
-									  {
-										"type": "icon",
-										"url": "https://i.imgur.com/aKbXQ9D.png",
-										"margin": "xs",
-										"size": "xs",
-										"offsetTop": "sm"
-									  }
-									]
+									"type": "text",
+									"text": "紅包",
+									"color": "#8E8E8E",
+									"margin": "sm",
+									"size": "xs",
+									"offsetTop": "xs"
+								  },
+								  {
+									"type": "icon",
+									"url": "https://i.imgur.com/aKbXQ9D.png",
+									"margin": "xs",
+									"size": "xs",
+									"offsetTop": "sm"
 								  }
-								],
-								"margin": "sm"
+								]
 							  }
 							],
-							"flex": 0
+							"margin": "sm"
 						  }
-						}
+						],
+						"flex": 0
+					  }
+					}
 				}
 			])
 			if (result) {
